@@ -3,6 +3,13 @@
   <groupId>sumi</groupId>
   <artifactId>Scraping</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
   <dependencies>
   	<dependency>
   		<groupId>org.jsoup</groupId>
@@ -22,4 +29,35 @@
 	    <version>1.4.4</version>
 	</dependency>
   </dependencies>
+  <build>
+	<plugins>
+	 <plugin>
+	    <groupId>org.apache.maven.plugins</groupId>
+	    <artifactId>maven-assembly-plugin</artifactId>
+	    <version>3.0.0</version>
+	    <configuration>
+			<finalName>Scraping</finalName>
+	        <descriptorRefs>
+	            <!-- 依存するリソースをすべてjarに同梱する -->
+	            <descriptorRef>jar-with-dependencies</descriptorRef>
+	        </descriptorRefs>
+	        <archive>
+	            <manifest>
+	                <mainClass>sumi.service.Main</mainClass>
+	            </manifest>
+	        </archive>
+	    </configuration>
+	    <executions>
+	        <execution>
+	            <!-- idタグは任意の文字列であれば何でもよい -->
+	            <id>make-assembly</id>
+	            <phase>package</phase>
+	            <goals>
+	                <goal>single</goal>
+	            </goals>
+	        </execution>
+	    </executions>
+	</plugin>
+	</plugins>
+</build>
 </project>

@@ -17,9 +17,10 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GoogleSearchList {
+
 	public static void getHtml() {
 		//String url = "http://ypage.tennis365.net/ypage/index_detail.html?ypage_id=4127";
-		String url = "https://www.google.co.jp/search?biw=1280&bih=590&ei=wOQMW840x6DxBfTYuLAG&q=site%3Ahttps%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F&oq=site%3Ahttps%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F&gs_l=psy-ab.12...0.0.0.240655.0.0.0.0.0.0.0.0..0.0....0...1c..64.psy-ab..0.0.0....0.WMlWE3A-Ln8";
+		String url = "https://product.rakuten.co.jp/product/-/a4562d256fa823136999a2cf0ff8bc31/";
 
 		try {
 			Document doc = Jsoup.connect(url).get();
